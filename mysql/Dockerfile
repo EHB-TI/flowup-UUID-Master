@@ -1,0 +1,3 @@
+ARG SQL_VERSION
+
+FROM mysql:${SQL_VERSION}
