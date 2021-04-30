@@ -6,6 +6,7 @@ volumes:
 services:
   mysql:
     restart: unless-stopped
+    command: --init-file /data/application/init.sql
     build:
       context: mysql/
       args: 
@@ -15,6 +16,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes: 
       - mysql-volume:/var/lib/mysql
+      - ./init.sql:/data/application/init.sql
     networks:
       - serv
   phpmyadmin:
