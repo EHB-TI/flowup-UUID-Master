@@ -2,3 +2,4 @@ pika
 pytest
 pymysql
 docker
+six
