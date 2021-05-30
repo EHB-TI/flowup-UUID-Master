@@ -1,4 +1,4 @@
-import pika, pytest, sys, os,pymysql, docker, os.path
+import pytest, sys, os,pymysql, docker, os.path
 
 #mysql-connectivity-test
 def test_mysql_connectivity():
