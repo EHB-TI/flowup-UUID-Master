@@ -1,4 +1,3 @@
-pika
 pytest
 pymysql
 docker
