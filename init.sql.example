@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS TestDB;
+USE TestDB;
+DROP USER IF EXISTS 'testing'@'localhost';
+CREATE USER 'testing'@'localhost' IDENTIFIED BY 'toor';
+GRANT ALL PRIVILEGES ON *.* TO 'testing'@'localhost';
+
+CREATE TABLE VoorbeeldTabel (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UUID BINARY(16),
+    Source_EntityID VARCHAR(255),
+    EntityType VARCHAR(255),
+    EntityVersion int,
+    Source VARCHAR(255));
+    
+INSERT INTO VoorbeeldTabel(UUID, Source_EntityID, EntityType, EntityVersion, Source)
+VALUES(UUID_TO_BIN(UUID()),'2','Event','2','Front-End');
